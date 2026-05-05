@@ -111,3 +111,4 @@ Em funil estruturado, criar automação separada por etapa porque CPM aceitável
 - Primeiros 7 dias de uma campanha nova — fase de aprendizado distorce CPM.
 - Anúncios em audiência muito segmentada (< 10.000 pessoas) — CPM alto é estrutural, não defeito.
 - Campanhas de **awareness com objetivo "Reach"** — pausar por CPM destrói o propósito da campanha.
+<!-- atualizado em 05/05/2026 -->
