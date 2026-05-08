@@ -1,0 +1,57 @@
+schema: 1
+story: "1.1"
+story_title: "Estrutura HTML e Layout Base"
+gate: PASS
+status_reason: >
+  Todos os 7 ACs implementados e verificados. 3 valores de cor hardcoded foram
+  refatorados pelo QA para variáveis CSS durante a revisão. Nenhum problema remanescente.
+reviewer: "Quinn (@qa)"
+updated: "2026-05-08T00:00:00Z"
+
+top_issues: []
+waiver:
+  active: false
+
+quality_score: 95
+expires: "2026-05-22T00:00:00Z"
+
+evidence:
+  tests_reviewed: 0
+  manual_checks: 25
+  risks_identified: 1
+  trace:
+    ac_covered: [1, 2, 3, 4, 5, 6, 7]
+    ac_gaps: []
+
+refactoring_performed:
+  - file: calculadora-web/style.css
+    change: "Adicionados tokens --danger-color, --danger-border, --display-bg em :root e html.light"
+    why: "3 valores de cor hardcoded fora do sistema de tokens quebravam o contrato de tema"
+    severity: medium
+    resolved: true
+
+nfr_validation:
+  security:
+    status: PASS
+    notes: "HTML estático sem inputs processados, sem superfície de ataque relevante nesta story"
+  performance:
+    status: PASS
+    notes: "Google Fonts com preconnect; CSS e JS servidos localmente; sem dependências de runtime"
+  reliability:
+    status: PASS
+    notes: "script.js vazio não causa erros; paths relativos corretos para todos os recursos"
+  maintainability:
+    status: PASS
+    notes: "CSS Custom Properties bem organizadas; seletores semânticos; comentários de seção claros"
+
+recommendations:
+  immediate: []
+  future:
+    - action: >
+        Story 1.2: ao construir string de expressão, mapear data-value='-' para '−' (U+2212)
+        no expression-display para consistência tipográfica
+      refs: ["calculadora-web/script.js"]
+    - action: >
+        Story 3.2: verificar que --display-bg no light mode (rgba(26,26,46,0.06))
+        produz contraste adequado com --text-secondary
+      refs: ["calculadora-web/style.css"]
