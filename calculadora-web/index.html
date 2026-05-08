@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <!-- Anti-flash theme script — populated in Story 3.2 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-container">
+
+    <section class="calculator" aria-label="Calculadora">
+      <div class="display">
+        <div id="expression-display" aria-label="Expressão em construção" aria-live="polite">0</div>
+        <div id="result-display" aria-label="Resultado" aria-live="polite">0</div>
+      </div>
+
+      <div class="keypad" role="group" aria-label="Teclado numérico">
+        <!-- Row 1: Controles e operadores superiores -->
+        <button class="btn btn--clear"    data-type="clear"    data-value="C"  aria-label="Limpar">C</button>
+        <button class="btn btn--backspace" data-type="backspace" data-value="⌫" aria-label="Apagar último dígito">⌫</button>
+        <button class="btn btn--operator" data-type="operator" data-value="÷"  aria-label="Dividir">÷</button>
+        <button class="btn btn--operator" data-type="operator" data-value="×"  aria-label="Multiplicar">×</button>
+
+        <!-- Row 2 -->
+        <button class="btn btn--digit" data-type="digit" data-value="7">7</button>
+        <button class="btn btn--digit" data-type="digit" data-value="8">8</button>
+        <button class="btn btn--digit" data-type="digit" data-value="9">9</button>
+        <button class="btn btn--operator" data-type="operator" data-value="-" aria-label="Subtrair">−</button>
+
+        <!-- Row 3 -->
+        <button class="btn btn--digit" data-type="digit" data-value="4">4</button>
+        <button class="btn btn--digit" data-type="digit" data-value="5">5</button>
+        <button class="btn btn--digit" data-type="digit" data-value="6">6</button>
+        <button class="btn btn--operator" data-type="operator" data-value="+" aria-label="Somar">+</button>
+
+        <!-- Row 4: 1, 2, 3 + = (= spans rows 4–5, col 4) -->
+        <button class="btn btn--digit" data-type="digit" data-value="1">1</button>
+        <button class="btn btn--digit" data-type="digit" data-value="2">2</button>
+        <button class="btn btn--digit" data-type="digit" data-value="3">3</button>
+        <button class="btn btn--equals" data-type="equals" data-value="=" aria-label="Igual">=</button>
+
+        <!-- Row 5: . e 0 (0 spans cols 2–3; col 4 continuação do =) -->
+        <button class="btn btn--decimal" data-type="decimal" data-value="." aria-label="Ponto decimal">.</button>
+        <button class="btn btn--digit btn--zero" data-type="digit" data-value="0">0</button>
+      </div>
+    </section>
+
+    <section class="history-panel" aria-label="Histórico de operações">
+      <h2>Histórico</h2>
+      <ul id="history-list" aria-label="Lista de operações anteriores">
+        <li class="history-empty">Nenhuma operação ainda</li>
+      </ul>
+      <button id="clear-history">Limpar histórico</button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
